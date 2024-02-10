@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session List</title>
+</head>
+<body>
+    <h1>Session List</h1>
+    {% for session in sessions %}
+    
+    <table>
+    <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Statut</th>
+            <th scope="col">Ouverture</th>
+            <th scope="col">Fermeture</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td>{{ session.name }}</td>
+        {% if session.status == True %}
+        <td>Ouvert</td>
+        {% else %}
+        <td>Fermé</td>
+        {% endif %}
+        <td>{{ session.start_time }}</td>
+        <td>{{ session.end_time }}</td>
+    </tbody>
+    </table>
+    {% endfor %}
+</body>
+</html>

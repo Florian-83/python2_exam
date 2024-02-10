@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <ul>
+        {% for user in users %}
+            {% if user.is_teacher == False %}
+            <li>{{ user.first_name }} {{ user.last_name }} - {{ user.mail }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Python - Page professeur</title>
+</head>
+
+<body>
+    <h1>Bonjour {{ user.first_name }},</h1>
+    <a class="btn"  href="{% url 'session_list' %}"  role="button">Gestion des formulaires</a>
+    <h2>Moyenne des résultats</h2>
+    <p>GRAPH</p>
+    <h2>Détail des résultats</h2>
+    <p>tableau prenom, nom, 1ere connexion, réponses</p>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Etudiant</th>
+                <th scope="col">1ère connexion</th>
+                <th scope="col">% de progression</th>
+                <th scope="col">Difficulté ressentie</th>
+                <th scope="col">Progression du TP</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for answer in answers %}
+                <td>{{ answer.user.last_name }} {{ answer.user.first_name }}</td>
+                <td>{{ answer.first_login }}</td>
+                <td>{{ answer.percent}} %</td>
+                <td>{{ answer.difficulty}}</td>
+                <td>{{ answer.progression }}</td>
+            </tbody>
+            </table>
+            {% endfor %}
+</body>

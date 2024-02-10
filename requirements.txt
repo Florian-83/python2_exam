@@ -1,0 +1,6 @@
+mysql-connector-python
+django
+flask
+mysqlclient
+pillow
+bcrypt

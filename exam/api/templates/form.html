@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <title>Python - Formulaire</title>
+</head>
+
+<body>
+    <div>
+    <form>
+        <p>Ton % d’avancement sur le TP :</p>
+        <input type="range" step="5" name="amountRange" min="0" max="100" value="0" oninput="this.form.amountInput.value=this.value" />
+        <input type="number" step="5" name="amountInput" min="0" max="100" value="0" oninput="this.form.amountRange.value=this.value" />
+      </form>
+  
+    <fieldset>
+        <legend>En termes de difficulté :</legend>
+      
+        <div>
+          <input type="radio" id="huey" name="drone" value="huey" autocomplete="off"/>
+          <label for="huey">Facile</label>
+        </div>
+      
+        <div>
+          <input type="radio" id="dewey" name="drone" value="dewey" autocomplete="off"/>
+          <label for="dewey">OK</label>
+        </div>
+      
+        <div>
+          <input type="radio" id="louie" name="drone" value="louie" autocomplete="off"/>
+          <label for="louie">Un peu compliqué</label>
+        </div>
+
+        <div>
+            <input type="radio" id="mouie" name="drone" value="mouie" autocomplete="off"/>
+            <label for="mouie">Très compliqué</label>
+          </div>
+
+          <div>
+            <input type="radio" id="nouie" name="drone" value="nouie" autocomplete="off"/>
+            <label for="nouie">Au secours !</label>
+          </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Ma progression :</legend>
+      
+        <div>
+          <input type="radio" id="hey" name="drone" value="hey" autocomplete="off"/>
+          <label for="hey">J'ai compris</label>
+        </div>
+      
+        <div>
+          <input type="radio" id="dwey" name="drone" value="dwey" autocomplete="off"/>
+          <label for="dwey">Je dois encore pratiquer</label>
+        </div>
+      
+        <div>
+          <input type="radio" id="luie" name="drone" value="luie" autocomplete="off"/>
+          <label for="luie">C'est flou</label>
+        </div>
+      </fieldset>
+      <script src= "{{ url_for('static',filename='step.js') }}"></script>
+    </div>
+</body>
