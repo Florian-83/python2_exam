@@ -136,6 +136,7 @@ celerybeat.pid
 .venv
 venv-project/
 venv-project.bkp/
+.idea/
 env/
 venv/
 ENV/
