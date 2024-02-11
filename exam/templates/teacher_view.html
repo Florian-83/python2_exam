@@ -1,20 +1,27 @@
+{% load static from static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Python - Page formateur</title>
 </head>
 
 <body>
-    <h1>Bonjour {{ user.first_name }},</h1>
-    <a class="btn"  href="{% url 'admin:index' %}"  role="button">Gestion des formulaires</a>
-    <h2>Moyenne des résultats</h2>
-    <p>GRAPH</p>
-    <h2>Détail des résultats</h2>
-    <table>
+    <div class="welcome">
+        <h1>Bonjour {{ teacher.first_name }},</h1>
+        <a class="btn"  href="{% url 'admin:index' %}"  role="button">Gestion des formulaires</a>
+    </div>
+    <div class="moyenne">
+        <h2>Moyenne des résultats</h2>
+        <p>GRAPH NON DISPONIBLE</p>
+    </div>
+    <div class="details">
+        <h2>Détail des résultats</h2>
+        <table>
         <thead>
             <tr>
                 <th scope="col">Etudiant</th>
@@ -39,6 +46,7 @@
                 {% endfor %}
             {% endfor %}
         </tbody>
-    </table>
-
+        </table>
+    </div>
 </body>
+</html>

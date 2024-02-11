@@ -24,6 +24,7 @@ class Answer(models.Model):
     percent = models.IntegerField(null=True)
     difficulty = models.CharField(max_length=50, null=True)
     progression = models.CharField(max_length=50, null=True)
+    session = models.ForeignKey(Session, on_delete=models.CASCADE)
 
 
 

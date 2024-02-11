@@ -22,7 +22,4 @@ urlpatterns = [
     path('', views.login, name='login'),
     path('teacher/', views.teacher_view, name='teacher_view'),
     path('admin/', admin.site.urls),
-    path('students/', views.student_list, name='student_list'),
-    path('sessions/', views.session_list, name='session_list'),
-    path('answers/', views.answers_list, name='answers_list'),
 ]
