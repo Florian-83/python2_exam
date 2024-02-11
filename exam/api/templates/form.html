@@ -10,60 +10,53 @@
 </head>
 
 <body>
-    <div>
-    <form>
+  <div class="container-form">
+      <div>
         <p>Ton % d’avancement sur le TP :</p>
-        <input type="range" step="5" name="amountRange" min="0" max="100" value="0" oninput="this.form.amountInput.value=this.value" />
-        <input type="number" step="5" name="amountInput" min="0" max="100" value="0" oninput="this.form.amountRange.value=this.value" />
-      </form>
-  
-    <fieldset>
+        <input autocomplete="off" id="slider" type="range" step="5" name="amountRange" min="0" max="100" value="0" oninput="updateTextInput(this.value);" />
+        <output id="step">0</output>%
+      </div>
+    
+      <div>
         <legend>En termes de difficulté :</legend>
-      
-        <div>
-          <input type="radio" id="huey" name="drone" value="huey" autocomplete="off"/>
-          <label for="huey">Facile</label>
-        </div>
-      
-        <div>
-          <input type="radio" id="dewey" name="drone" value="dewey" autocomplete="off"/>
-          <label for="dewey">OK</label>
-        </div>
-      
-        <div>
-          <input type="radio" id="louie" name="drone" value="louie" autocomplete="off"/>
-          <label for="louie">Un peu compliqué</label>
-        </div>
-
-        <div>
-            <input type="radio" id="mouie" name="drone" value="mouie" autocomplete="off"/>
-            <label for="mouie">Très compliqué</label>
-          </div>
-
           <div>
-            <input type="radio" id="nouie" name="drone" value="nouie" autocomplete="off"/>
-            <label for="nouie">Au secours !</label>
+            <input type="radio" name="dif" value="facile" autocomplete="off"/>
+            <label>Facile</label>
           </div>
-      </fieldset>
+          <div>
+            <input type="radio" name="dif" value="ok" autocomplete="off"/>
+            <label>OK</label>
+          </div>
+          <div>
+            <input type="radio" name="dif" value="peu_comp" autocomplete="off"/>
+            <label>Un peu compliqué</label>
+          </div>
+          <div>
+              <input type="radio" name="dif" value="tres_comp" autocomplete="off"/>
+              <label>Très compliqué</label>
+            </div>
+            <div>
+              <input type="radio" name="dif" value="oskour" autocomplete="off"/>
+              <label>Au secours !</label>
+            </div>
+          </div>
 
-      <fieldset>
-        <legend>Ma progression :</legend>
-      
         <div>
-          <input type="radio" id="hey" name="drone" value="hey" autocomplete="off"/>
-          <label for="hey">J'ai compris</label>
+          <legend>Ma progression :</legend>
+          <div>
+            <input type="radio" name="prog" value="understand" autocomplete="off"/>
+            <label>J'ai compris</label>
+          </div>
+          <div>
+            <input type="radio" name="prog" value="in_progress" autocomplete="off"/>
+            <label>Je dois encore pratiquer</label>
+          </div>
+          <div>
+            <input type="radio" name="prog" value="need_help" autocomplete="off"/>
+            <label>C'est flou</label>
+          </div>
         </div>
-      
-        <div>
-          <input type="radio" id="dwey" name="drone" value="dwey" autocomplete="off"/>
-          <label for="dwey">Je dois encore pratiquer</label>
-        </div>
-      
-        <div>
-          <input type="radio" id="luie" name="drone" value="luie" autocomplete="off"/>
-          <label for="luie">C'est flou</label>
-        </div>
-      </fieldset>
-      <script src= "{{ url_for('static',filename='step.js') }}"></script>
-    </div>
+
+      <script src= "{{ url_for('static',filename='form_script.js') }}"></script>
+  </div>
 </body>

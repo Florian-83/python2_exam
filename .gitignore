@@ -135,7 +135,7 @@ celerybeat.pid
 .env
 .venv
 venv-project/
-venv-project.bkp/
+exam/migrations/
 .idea/
 env/
 venv/

@@ -19,11 +19,11 @@ class Session(models.Model):
     end_time = models.DateTimeField()
 
 class Answer(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    first_login = models.DateTimeField()
-    percent = models.IntegerField()
-    difficulty = models.CharField(max_length=50)
-    progression = models.CharField(max_length=50)
+    mail = models.EmailField(max_length=50, unique=True)
+    first_login = models.DateTimeField(null=True)
+    percent = models.IntegerField(null=True)
+    difficulty = models.CharField(max_length=50, null=True)
+    progression = models.CharField(max_length=50, null=True)
 
 
 
