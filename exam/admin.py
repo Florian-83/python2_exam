@@ -3,4 +3,3 @@ from .models import User, Session, Answer
 
 admin.site.register(User)
 admin.site.register(Session)
-admin.site.register(Answer)
