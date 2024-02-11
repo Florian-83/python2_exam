@@ -85,7 +85,7 @@ def api():
 
     if existing_data:
         # Si des données existent, mettre à jour les valeurs
-        sql = "UPDATE exam_answer SET progression = %s, difficulty = %s, percent = %s, WHERE mail = %s"
+        sql = "UPDATE exam_answer SET progression = %s, difficulty = %s, percent = %s WHERE mail = %s"
         values = (data['progression'], data['difficulty'], data['percent'], mail)
     else:
         # Si aucune donnée n'existe, insérer les nouvelles données
